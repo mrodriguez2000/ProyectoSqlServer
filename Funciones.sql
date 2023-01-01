@@ -13,6 +13,7 @@ SELECT *FROM MediaSalarial();
 SELECT *FROM Trabajadores;
 SELECT *FROM Empresa;
 
+-- Función que trae el salario promedio agrupado por Categoria de empresa y cargo de trabajadores
 CREATE OR ALTER FUNCTION SalarioPromedioCategoria (
 	@CategoriaEmpresa VARCHAR(30)
 )
@@ -24,4 +25,5 @@ RETURN (
 		GROUP BY Empresa.CategoriaEmpresa, Trabajadores.Cargo
 )
 
-SELECT *FROM SalarioPromedioCategoria('Finan');
+SELECT DISTINCT CategoriaEmpresa FROM Empresa;
+SELECT *FROM SalarioPromedioCategoria('Financiero');
