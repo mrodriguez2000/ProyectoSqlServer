@@ -146,7 +146,19 @@ VALUES
 ('Usuario 97', 'Especialista en servidores', 'Medellin', 3690000, 'Presencial', 2),
 ('Usuario 98', 'Desarrollador web Backend', 'Cali', 4630000, 'Presencial', 13),
 ('Usuario 99', 'Desarrollador web Frontend', 'Bogota D.C', 4625000, 'Presencial', 9),
-('Usuario 100', 'Ingeniero de datos', 'Bogota D.C', 4650000, 'Remoto', 2);
+('Usuario 100', 'Ingeniero de datos', 'Bogota D.C', 4650000, 'Remoto', 2),
+('Usuario 101', 'Ingeniero de infraestructura', 'Bogota D.C', 5500000, 'Presencial', 6),
+('Usuario 102', 'Dir. Bussiness Intelligence', 'Bogota D.C', 6975000, 'Presencial', 11),
+('Usuario 103', 'Cientifico de datos', 'Medellin', 6500000, 'Remoto', 1),
+('Usuario 104', 'Ingeniero de infraestructura', 'Medellin', 6350000, 'Remoto', 5),
+('Usuario 105', 'Especialista en servidores', 'Medellin', 3900500, 'Remoto', 9),
+('Usuario 106', 'Ingeniero de datos', 'Bogota D.C', 6645000, 'Hibrido', 17),
+('Usuario 107', 'Desarrollador ETL', 'Barranquilla', 2300000, 'Presencial', 11),
+('Usuario 108', 'Desarrollador movil', 'Bucaramanga', 3950000, 'Remoto', 9),
+('Usuario 109', 'Coord. Bussiness Intelligence', 'Bogota D.C', 6500000, 'Hibrido', 12),
+('Usuario 110', 'Ingeniero de datos', 'Bogota D.C', 3650260, 'Remoto', 18);
+
+SELECT DISTINCT Cargo FROM Trabajadores;
 
 SELECT *FROM Trabajadores;
 SELECT *FROM Empresa;
