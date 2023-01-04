@@ -10,9 +10,6 @@ RETURN (
 
 SELECT *FROM MediaSalarial();
 
-SELECT *FROM Trabajadores;
-SELECT *FROM Empresa;
-
 -- Función que trae el salario promedio agrupado por Categoria de empresa y cargo de trabajadores
 CREATE OR ALTER FUNCTION SalarioPromedioCategoria (
 	@CategoriaEmpresa VARCHAR(30)

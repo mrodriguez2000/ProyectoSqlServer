@@ -173,18 +173,17 @@ Empresa.IdEmpresa = Trabajadores.Empresa GROUP BY Empresa.CategoriaEmpresa ORDER
 -- será considerado desarrollador web
 
 GO
-CREATE VIEW ClasificacionCargos AS SELECT *, CASE
+CREATE OR ALTER VIEW ClasificacionCargos AS SELECT Trabajadores.Nombre, Trabajadores.Cargo, Trabajadores.Ciudad, Empresa.NombreEmpresa, CASE
 WHEN [Cargo] LIKE '%web%' THEN 'Desarrollador web'
 WHEN [Cargo] LIKE '%datos%' OR [Cargo] LIKE '%ETL%' THEN 'Especialistas en datos'
 WHEN [Cargo] LIKE '%movil%' OR [Cargo] LIKE '%IOS%' THEN 'Desarrollador movil'
 WHEN [Cargo] LIKE 'dir%' OR [Cargo] LIKE '%proyectos%' OR [Cargo] LIKE '%coord%' OR [Cargo] LIKE '%Lid%' THEN 'Admin. Proyectos TI'
 ELSE 'Ramas especializadas'
-END AS 'Clasificacion' FROM [dbo].[Trabajadores];
+END AS 'Clasificacion' FROM [dbo].[Trabajadores] INNER JOIN [dbo].[Empresa] ON Trabajadores.Empresa = Empresa.IdEmpresa;
 
+-- Pruebas de que se creo la vista
+SELECT *FROM ClasificacionCargos;
 SELECT * FROM [dbo].[ClasificacionCargos] WHERE [Clasificacion] LIKE '%especializada%';
-
--- Eliminar la vista, posteriormente se volverá a crear
-DROP VIEW ClasificacionCargos;
 
 -- Actualizado algunos registros
 UPDATE Trabajadores SET Cargo = 'Desarrollador web Fullstack' WHERE Cargo = 'Desarrollador Fullstack';
