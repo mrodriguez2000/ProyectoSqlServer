@@ -178,12 +178,12 @@ WHEN [Cargo] LIKE '%web%' THEN 'Desarrollador web'
 WHEN [Cargo] LIKE '%datos%' OR [Cargo] LIKE '%ETL%' THEN 'Especialistas en datos'
 WHEN [Cargo] LIKE '%movil%' OR [Cargo] LIKE '%IOS%' THEN 'Desarrollador movil'
 WHEN [Cargo] LIKE 'dir%' OR [Cargo] LIKE '%proyectos%' OR [Cargo] LIKE '%coord%' OR [Cargo] LIKE '%Lid%' THEN 'Admin. Proyectos TI'
-ELSE 'Ramas especializadas'
+ELSE 'Otras especializaciones'
 END AS 'Clasificacion' FROM [dbo].[Trabajadores] INNER JOIN [dbo].[Empresa] ON Trabajadores.Empresa = Empresa.IdEmpresa;
 
 -- Pruebas de que se creo la vista
 SELECT *FROM ClasificacionCargos;
-SELECT * FROM [dbo].[ClasificacionCargos] WHERE [Clasificacion] LIKE '%especializada%';
+SELECT * FROM [dbo].[ClasificacionCargos] WHERE [Clasificacion] LIKE '%especializa%';
 
 -- Actualizado algunos registros
 UPDATE Trabajadores SET Cargo = 'Desarrollador web Fullstack' WHERE Cargo = 'Desarrollador Fullstack';
